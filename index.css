@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Custom scrollbar for history */
+.no-scrollbar::-webkit-scrollbar {
+    display: none;
+}
+.no-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+/* Pastel Polka Dot Background */
+.bg-dots {
+  background-color: #fff1f2; /* Rose 50 */
+  background-image:  radial-gradient(#f472b6 3px, transparent 3px), radial-gradient(#c084fc 3px, transparent 3px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+}
