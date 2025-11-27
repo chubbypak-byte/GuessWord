@@ -103,8 +103,8 @@ const App: React.FC = () => {
     // Layer 1: Background Dots & Centering
     <div className="min-h-[100dvh] bg-dots flex items-center justify-center p-3 sm:p-6 font-sans">
         
-        {/* Layer 2: App Frame (Card) - Updated to Pink Transparent */}
-        <div className="w-full max-w-md bg-pink-100/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border-[6px] border-white overflow-hidden flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh] relative ring-1 ring-purple-100">
+        {/* Layer 2: App Frame (Card) - Updated to White Transparent */}
+        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border-[6px] border-white overflow-hidden flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh] relative ring-1 ring-purple-100">
             
             {/* Header - Fixed at top of card */}
             <header className="shrink-0 bg-white/40 backdrop-blur-sm z-30 px-5 py-4 flex justify-between items-center border-b border-white/50">
