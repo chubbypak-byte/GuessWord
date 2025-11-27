@@ -103,18 +103,18 @@ const App: React.FC = () => {
     // Layer 1: Background Dots & Centering
     <div className="min-h-[100dvh] bg-dots flex items-center justify-center p-3 sm:p-6 font-sans">
         
-        {/* Layer 2: App Frame (Card) */}
-        <div className="w-full max-w-md bg-white/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border-[6px] border-white overflow-hidden flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh] relative ring-1 ring-purple-100">
+        {/* Layer 2: App Frame (Card) - Updated to Pink Transparent */}
+        <div className="w-full max-w-md bg-pink-100/80 backdrop-blur-xl rounded-[2.5rem] shadow-2xl border-[6px] border-white overflow-hidden flex flex-col h-[calc(100dvh-2rem)] sm:h-[85vh] relative ring-1 ring-purple-100">
             
             {/* Header - Fixed at top of card */}
-            <header className="shrink-0 bg-white/50 backdrop-blur-sm z-30 px-5 py-4 flex justify-between items-center border-b border-purple-50">
+            <header className="shrink-0 bg-white/40 backdrop-blur-sm z-30 px-5 py-4 flex justify-between items-center border-b border-white/50">
                 <div className="flex items-center gap-3">
                     <div className="text-3xl animate-bounce drop-shadow-sm">🔮</div>
                     <div>
-                        <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-500 to-pink-500">
+                        <h1 className="text-xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-600 to-pink-600">
                             ทายคำ ทายใจ
                         </h1>
-                        <p className="text-[10px] text-slate-400 font-medium tracking-wide">
+                        <p className="text-[10px] text-slate-500 font-medium tracking-wide">
                             {language === 'TH' ? 'EMOJI MATCH' : 'SEMANTIC GUESS'}
                         </p>
                     </div>
@@ -122,7 +122,7 @@ const App: React.FC = () => {
                 
                 <button 
                     onClick={handleLanguageToggle}
-                    className="bg-white hover:bg-indigo-50 text-indigo-500 font-bold py-1.5 px-3 rounded-2xl text-xs transition-colors border-2 border-indigo-100 shadow-sm"
+                    className="bg-white/70 hover:bg-white text-indigo-500 font-bold py-1.5 px-3 rounded-2xl text-xs transition-colors border-2 border-indigo-100 shadow-sm"
                 >
                     {language === 'TH' ? '🇹🇭 TH' : '🇺🇸 EN'}
                 </button>
@@ -142,7 +142,7 @@ const App: React.FC = () => {
                     
                     {gameState === 'WON' && (
                         <div className="text-center animate-[bounce_1s_infinite] my-4">
-                            <h2 className="text-3xl font-extrabold text-green-500 mb-2 drop-shadow-sm">
+                            <h2 className="text-3xl font-extrabold text-green-600 mb-2 drop-shadow-sm">
                                 {language === 'TH' ? 'ยินดีด้วย! 🎉' : 'You Won! 🎉'}
                             </h2>
                             <button 
@@ -185,9 +185,9 @@ const App: React.FC = () => {
                 {/* History List */}
                 <div className="space-y-4 pb-2">
                     {history.length === 0 && gameState === 'PLAYING' && (
-                        <div className="text-center text-slate-400 py-10 opacity-70">
+                        <div className="text-center text-slate-500 py-10 opacity-70">
                             <div className="text-6xl mb-4 grayscale hover:grayscale-0 transition-all duration-500">🧐</div>
-                            <p className="text-lg font-medium text-slate-500">
+                            <p className="text-lg font-medium text-slate-600">
                                 {language === 'TH' ? 'ลองทายคำดูสิ!' : 'Start guessing!'}
                             </p>
                         </div>
@@ -205,7 +205,7 @@ const App: React.FC = () => {
             </main>
 
             {/* Bottom Controls - Fixed at bottom of card */}
-            <div className="shrink-0 bg-white/80 backdrop-blur-md p-4 pt-2 z-40 border-t border-purple-50">
+            <div className="shrink-0 bg-white/60 backdrop-blur-md p-4 pt-2 z-40 border-t border-white/50">
                 <div className="space-y-3">
                     {/* Action Buttons Row */}
                     <div className="flex justify-between gap-2">
@@ -246,7 +246,7 @@ const App: React.FC = () => {
                             onKeyDown={(e) => e.key === 'Enter' && handleGuess()}
                             disabled={gameState !== 'PLAYING' || isSubmitting}
                             placeholder={language === 'TH' ? 'พิมพ์คำทายที่นี่...' : 'Type your guess...'}
-                            className="w-full bg-slate-50 border-2 border-slate-100 focus:bg-white focus:border-purple-300 rounded-2xl py-3.5 pl-5 pr-14 text-lg outline-none transition-all disabled:opacity-70 text-slate-700 placeholder-slate-400 shadow-inner"
+                            className="w-full bg-slate-50/80 border-2 border-slate-100 focus:bg-white focus:border-purple-300 rounded-2xl py-3.5 pl-5 pr-14 text-lg outline-none transition-all disabled:opacity-70 text-slate-700 placeholder-slate-400 shadow-inner"
                         />
                         <button 
                             onClick={handleGuess}
